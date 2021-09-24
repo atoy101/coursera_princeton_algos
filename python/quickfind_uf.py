@@ -15,7 +15,7 @@ class QuickfindUF:
 		id = self.data[num1]
 		for i in range(len(self.data)):
 			if self.data[i]==id:
-				self.data[i]= num2;
+				self.data[i]= self.data[num2];
 			
 	def connected(self,num1,num2):		#O(1) time
 		if (self.data[num1] == self.data[num2]):
