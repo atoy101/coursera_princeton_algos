@@ -14,12 +14,14 @@ class QuickunionUF:
 	def union(self,num1,num2):		#O(1) time
 		self.data[num1] = num2;
 			
-	def connected(self,num1,num2):		#O(2n) time worst case
+	def connected(self,num1,num2):		#O(n) time worst case from O(2n) by adding if statement to check if head==num1 or num2 
 		next = self.data[num1]
 		head = num1;
 		while(head!=next):
 			head = next
 			next = self.data[head]
+			if (head==num2):
+				return True
 		num1_root=head
 		
 		next = self.data[num2]
@@ -27,6 +29,8 @@ class QuickunionUF:
 		while(head!=next):
 			head = next
 			next = self.data[head]
+			if (head==num1):
+				return True
 		num2_root=head;
 		
 		if (num2_root==num1_root):
@@ -47,6 +51,6 @@ if __name__ == "__main__":
 	x.union(1,8)
 	x.union(4,1)
 	x.print_data()
-	y = x.connected(4,0)
+	y = x.connected(7,4)
 	print(y)
 	
