@@ -31,9 +31,9 @@ class Percolation:
 			self.open[i] = 1
 			self.numopen+=1
 		if (self.isOpen(row+1,col)):
-			self.union(i,i+5)
+			self.union(i,i+self.N)
 		if (self.isOpen(row-1,col)):
-			self.union(i,i-5)
+			self.union(i,i-self.N)
 		if (self.isOpen(row,col+1)):
 			self.union(i,i+1)
 		if (self.isOpen(row,col-1)):
@@ -100,12 +100,14 @@ class Percolation:
 		
 	def print_array(self):
 		count=0
+		
 		for i in range(self.N):
 			print('[',end="")
 			for j in range(self.N):
 				print(self.data[count],end=",")
 				count+=1
 			print(']')
+			
 		count=0
 		for i in range(self.N):
 			print('[',end="")
@@ -113,25 +115,27 @@ class Percolation:
 				print(self.open[count],end=",")
 				count+=1
 			print(']')
+		#print(self.numopen)
+		#print(x.percolates())
 		
 if __name__ == "__main__":
-	x = Percolation(10)
-	
-"""
+
 	numopen_array = []
 	sum = 0
-	N=10
-	for i in range(10):
+	N=5
+	for i in range(2500):
 		x = Percolation(N)
 		while(x.percolates()==False):
 			x.open_site(random.randint(0,N-1),random.randint(0,N-1))
+			#x.print_array()
+			#print()
 		numopen_array.append(x.numopen)
 		#x.print_array()
 	for x in numopen_array:
 		sum+=x
 	pprint(numopen_array)
 	print((sum/len(numopen_array))/(N*N))
-	"""
+
 			
 			
 			
