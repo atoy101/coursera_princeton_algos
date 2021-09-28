@@ -127,10 +127,7 @@ if __name__ == "__main__":
 		x = Percolation(N)
 		while(x.percolates()==False):
 			x.open_site(random.randint(0,N-1),random.randint(0,N-1))
-			#x.print_array()
-			#print()
 		numopen_array.append(x.numopen)
-		#x.print_array()
 	for x in numopen_array:
 		sum+=x
 	pprint(numopen_array)
