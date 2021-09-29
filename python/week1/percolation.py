@@ -122,7 +122,7 @@ if __name__ == "__main__":
 
 	numopen_array = []
 	sum = 0
-	N=5
+	N=10
 	for i in range(2500):
 		x = Percolation(N)
 		while(x.percolates()==False):
@@ -130,7 +130,7 @@ if __name__ == "__main__":
 		numopen_array.append(x.numopen)
 	for x in numopen_array:
 		sum+=x
-	pprint(numopen_array)
+	#pprint(numopen_array)
 	print((sum/len(numopen_array))/(N*N))
 
 			
