@@ -110,7 +110,7 @@ if __name__=="__main__":
 			if slope==prev_slope:
 				count+=1
 				temp_points.append(q)
-			if slope!=prev_slope:
+			if slope!=prev_slope or i==len(sorted_p)-1:
 				if count>=3:	
 					temp_points.append(origin)
 					temp_points.sort()
@@ -124,18 +124,7 @@ if __name__=="__main__":
 				temp_points=[]
 			prev_slope=slope
 			temp_points.append(q)
-		temp_points = temp_points[0:len(temp_points)-1]
-		
-		
-		if count>=3:	
-					temp_points.append(origin)
-					temp_points.sort()
-					temp_point = [temp_points[0],temp_points[-1]]
-					print(temp_points,"temp points")
-					if  temp_point in lines:
-						pass
-					else:
-						lines.append(temp_point)
+
 	
 	#print(lines)
 	for line in lines:
