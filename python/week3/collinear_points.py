@@ -115,7 +115,7 @@ if __name__=="__main__":
 					temp_points.append(origin)
 					temp_points.sort()
 					temp_point = [temp_points[0],temp_points[-1]]
-					print(temp_points,"temp points")
+					#print(temp_points,"temp points")
 					if  temp_point in lines:
 						pass
 					else:
